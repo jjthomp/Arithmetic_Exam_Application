@@ -1,4 +1,6 @@
 import random
+import time
+import timeit
 operations = ["+", "-", "*"]
 n1 = 0
 n2 = 0
@@ -47,6 +49,7 @@ while not pick:
             pick = False
             print("Incorrect format.")
 
+start = time.perf_counter()
 if level == 1:
     while count < 5:
         a = random.randint(2, 9)
@@ -82,6 +85,8 @@ if level == 1:
     if response2:
         level = 2
         count = 0
+    else:
+        end = time.perf_counter()
 
 
 if level == 2:
@@ -105,6 +110,7 @@ if level == 2:
         count += 1
         correct_format2 = False
 
+    end = time.perf_counter()
     levels_attempt.append(2)
 
 
@@ -114,6 +120,9 @@ elif levels_attempt.__contains__(1):
     print(f"Your mark is {n1}/5.")
 else:
     print(f"Your mark is {n2}/5.")
+
+total_time = (end - start)/60
+print(f"Total time to complete the exam was: {round(total_time, 2)} minutes")
 
 response1 = question_asker("Would you like to save your result to the file? Enter yes or no.")
 
