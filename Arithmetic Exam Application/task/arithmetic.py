@@ -2,7 +2,6 @@ import random
 import time
 import timeit
 
-
 def question_asker(question):
     print(question)
     response3 = False
@@ -18,6 +17,8 @@ def question_asker(question):
         else:
             print("Incorrect format")
     return False
+
+
 
 def main():
     operations = ["+", "-", "*"]
@@ -35,9 +36,7 @@ def main():
         2: "integral squares of 1-12"
     }
 
-
-    print("What is your name?")
-    name = input()
+    name = UserInterface.name
 
     while not pick:
         print("""Which level do you want? Enter a number:
@@ -153,7 +152,7 @@ def main():
             print("Exiting program")
 
 
-if __name__ == "__main__":
-    main()
+#if __name__ == "__main__":
+    #main()
 
 
